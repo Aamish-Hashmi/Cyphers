@@ -1,0 +1,14 @@
+# encrypt(word) takes in an encrypted word and returns the original word encrypted by the ROT13 encryption (given that the word is encrypted by ROT13)
+
+def encrypt(encrypted_word):
+    encrypted_message = ""
+    for i in range(len(encrypted_word)):
+        char = encrypted_word[i]
+        if (char.islower()):
+            encrypted_message += chr((ord(char) - 13 - 97) % 26 + 97)
+        else:
+            encrypted_message += chr((ord(char) - 13 - 65) % 26 + 65)
+    return encrypted_message
+ 
+encrypted_word = str(input("Enter word to encrypt: "))
+print ("\nYour ROT13 Cipher is: " + encrypt(encrypted_word))
