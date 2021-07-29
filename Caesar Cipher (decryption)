@@ -1,0 +1,17 @@
+# decrypt(encrypted_message,key) takes in the encrypted message and decrypts it according to the Caesar Cipher encryption. (Givne that the word was encrypted using the Caesar Cipher)
+
+import string
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+def decrypt(encrypted_message,key):
+    decrypted_message = ""
+    for i in encrypted_message:
+        if i in alphabet:
+            decrypted_message += alphabet[(alphabet.find(i) - key) % 26]
+        else:
+            decrypted_message += i
+    return decrypted_message
+
+encrypted_message = input("Enter word to decrypt: ")
+key = int(input("Enter shift key: "))
+print ("\nYour Caesar Cipher decrypted message is: " + decrypt(encrypted_message,key))
