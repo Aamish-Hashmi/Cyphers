@@ -1,0 +1,15 @@
+# ROT13 is a special case of the Caesar Cipher substitution where each letter of the word is rotated by 13 letters (shift key is 13).
+# encrypt(word) takes in a word and returns the word encrypted byt he ROT13 encryption.
+
+def encrypt(word):
+    encrypted_message = ""
+    for i in range(len(word)):
+        char = word[i]
+        if (char.islower()):
+            encrypted_message += chr((ord(char) + 13 - 97) % 26 + 97)
+        else:
+            encrypted_message += chr((ord(char) + 13 - 65) % 26 + 65)
+    return encrypted_message
+ 
+word = str(input("Enter word to encrypt: "))
+print ("\nYour ROT13 Cipher is: " + encrypt(word))
