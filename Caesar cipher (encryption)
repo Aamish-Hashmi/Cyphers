@@ -1,3 +1,6 @@
+# Caesar cipher is a method of substitution cipher where each letter of the word shifts by a number (shift key) of choice.
+# encrypt(word,shift) takes in a word and a shift key and encrypts the word according to the Caesae encryption.
+
 def encrypt(word,shift):
     encrypted_message = ""
     for i in range(len(word)):
